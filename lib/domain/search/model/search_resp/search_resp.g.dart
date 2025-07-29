@@ -20,7 +20,7 @@ Map<String, dynamic> _$SearchRespToJson(SearchResp instance) =>
 
 SerchResultData _$SerchResultDataFromJson(Map<String, dynamic> json) =>
     SerchResultData(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       originalTitle: json['original_title'] as String?,
       posterpath: json['poster_path'] as String?,
     );

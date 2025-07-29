@@ -103,6 +103,7 @@ class VideoListItem extends StatelessWidget {
                             }
                             return GestureDetector(
                               onTap: () {
+                                
                                 likedVideosIdsNotifier.value.add(_index);
                                 likedVideosIdsNotifier.notifyListeners();
                               },

@@ -10,9 +10,9 @@ part 'fast_laugh_state.dart';
 part 'fast_laugh_bloc.freezed.dart';
 
 final dummyvideoUrls = [
-  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+  "https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4",
+  "https://www.exit109.com/~dnn/clips/RW20seconds_2.mp4",
+  "https://videos.pexels.com/video-files/2785536/2785536-uhd_1440_2560_25fps.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
