@@ -22,20 +22,15 @@ final dummyvideoUrls = [
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
 ];
- ValueNotifier<Set<int>> likedVideosIdsNotifier = ValueNotifier({});
+ValueNotifier<Set<int>> likedVideosIdsNotifier = ValueNotifier({});
+
 @injectable
 class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
   FastLaughBloc(IDownloadsRepo _downloadService)
     : super(FastLaughState.initial()) {
     on<Initialize>((event, emit) async {
       // sending loading to ui
-      emit(
-         FastLaughState(
-          videosList: [],
-          isLoading: true,
-          isError: false,
-        ),
-      );
+      emit(FastLaughState(videosList: [], isLoading: true, isError: false));
       //get trending movies
       final _result = await _downloadService.getDownloadsImages();
       final _state = _result.fold(
@@ -46,21 +41,15 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
             isError: true,
           );
         },
-        (resp) => FastLaughState(
-          videosList: resp,
-          isLoading: false,
-          isError: false,
-        ),
+        (resp) =>
+            FastLaughState(videosList: resp, isLoading: false, isError: false),
       );
 
       //sent to ui
       emit(_state);
     });
 
-    on<LikeVideo>((event, emit) async {
-     
-      
-    });
+    on<LikeVideo>((event, emit) async {});
 
     on<UnLikeVideo>((event, emit) async {
       // likedVideosIdsNotifier.value.remove(event.id);

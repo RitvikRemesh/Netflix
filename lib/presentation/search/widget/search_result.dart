@@ -28,7 +28,7 @@ class SearchResultWidget extends StatelessWidget {
                 childAspectRatio: 1 / 1.4,
                 children: List.generate(20, (index) {
                   final movie = state.searchResultList[index];
-                  return  MainCard(imageUrl: movie.posterImageUrl,);
+                  return MainCard(imageUrl: movie.posterImageUrl);
                 }),
               );
             },

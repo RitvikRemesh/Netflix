@@ -6,7 +6,7 @@ part 'search_resp.g.dart';
 @JsonSerializable()
 class SearchResp {
   @JsonKey(name: 'results')
-  List<SerchResultData>results;
+  List<SerchResultData> results;
 
   SearchResp({this.results = const []});
 
@@ -18,7 +18,7 @@ class SearchResp {
 }
 
 @JsonSerializable()
-class SerchResultData  {
+class SerchResultData {
   @JsonKey(name: 'id')
   int? id;
 
@@ -26,11 +26,11 @@ class SerchResultData  {
   String? originalTitle;
 
   @JsonKey(name: 'poster_path')
-  String?  posterpath;
+  String? posterpath;
 
-  String get posterImageUrl =>'$imageAppendUrl$posterpath';
+  String get posterImageUrl => '$imageAppendUrl$posterpath';
 
-  SerchResultData({this.id, this.originalTitle,  this.posterpath});
+  SerchResultData({this.id, this.originalTitle, this.posterpath});
 
   factory SerchResultData.fromJson(Map<String, dynamic> json) {
     return _$SerchResultDataFromJson(json);

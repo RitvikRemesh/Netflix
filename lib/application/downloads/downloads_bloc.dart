@@ -55,29 +55,25 @@ class DownloadsBloc extends Bloc<DownloadsEvent, DownloadsState> {
         state.copyWith(
           isLoading: true,
           downloadsFailureOrSuccessOption: none(),
-          ),
-        );
-    final Either<MainFailure,List<Downloads>> downloadsOption
-    = await _downloadsRepo.getDownloadsImages();
-    log(downloadsOption.toString());
+        ),
+      );
+      final Either<MainFailure, List<Downloads>> downloadsOption =
+          await _downloadsRepo.getDownloadsImages();
+      log(downloadsOption.toString());
 
-    emit(
-      downloadsOption.fold(
-      (failure)=>state.copyWith(
-        isLoading:false,
-        downloadsFailureOrSuccessOption: some(
-          left(failure),
+      emit(
+        downloadsOption.fold(
+          (failure) => state.copyWith(
+            isLoading: false,
+            downloadsFailureOrSuccessOption: some(left(failure)),
           ),
+          (success) => state.copyWith(
+            isLoading: false,
+            downloads: success,
+            downloadsFailureOrSuccessOption: some(right(success)),
           ),
-      (success)=>state.copyWith(
-        isLoading: false,
-        downloads: success,
-        downloadsFailureOrSuccessOption: some(
-          right(success),
-          ),
-          ),
-    ),
-   );
+        ),
+      );
     });
   }
 }

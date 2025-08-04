@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix1/application/bloc/fast_laugh_bloc.dart';
+import 'package:netflix1/application/fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix1/presentation/fast_laugh/widget/video_list_item.dart';
 
 class ScreenFastLaugh extends StatelessWidget {

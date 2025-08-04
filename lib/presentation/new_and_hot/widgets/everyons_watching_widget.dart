@@ -5,27 +5,41 @@ import 'package:netflix1/presentation/home/widgets/custom_button_widget.dart';
 import 'package:netflix1/presentation/widgets/video_widget.dart';
 
 class EveryonesWatchingWidget extends StatelessWidget {
-  const EveryonesWatchingWidget({super.key});
+  final String posterPath;
+  final String movieName;
+  final String description;
+  final String backdropPath;
+
+  const EveryonesWatchingWidget({
+    super.key,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
+    required this.backdropPath
+
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children:  [
         kheight,
         Text(
-          "Friends",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          movieName,
+          style:const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         kheight,
         Text(
-          "This hitsitcom followers the merry misadventures of six 20-something pals as they navigate the pitfalls of the work, life and love 1990s Mahattan",
-          style: TextStyle(color: kGreyColor),
+          description,
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
+          style:const TextStyle(color: kGreyColor),
         ),
         kheight50,
-        VideoWidget(),
+        VideoWidget(url:backdropPath),
         kheight,
-        Row(
+       const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             CustomButtonWidget(
