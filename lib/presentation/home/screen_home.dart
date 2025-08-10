@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,6 +74,11 @@ class ScreenHome extends StatelessWidget {
                     }).toList();
                     _southIndian.shuffle();
 
+                    final _top10TVshows = state.trendingTvList.map((t) {
+                      return '$imageAppendUrl${t.posterPath}';
+                    }).toList();
+                    _top10TVshows.shuffle();
+
                     // list view
 
                     return ListView(
@@ -91,10 +98,12 @@ class ScreenHome extends StatelessWidget {
                               : _trending,
                         ),
                         kheight,
-                        
-                        const NumberTitleCard(),
+
+                        NumberTitleCard( posterList: _top10TVshows.length >= 10
+                              ? _top10TVshows.sublist(0, 10)
+                              : _top10TVshows,),
                         kheight,
-                        
+
                         MainTitleCard(
                           title: "Tense Dramas",
                           posterList: _drama.length >= 10
@@ -108,7 +117,6 @@ class ScreenHome extends StatelessWidget {
                               ? _southIndian.sublist(0, 10)
                               : _southIndian,
                         ),
-
                       ],
                     );
                   },
