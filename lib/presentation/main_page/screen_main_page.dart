@@ -6,13 +6,14 @@ import 'package:netflix1/presentation/main_page/widgets/bottom_navi.dart';
 import 'package:netflix1/presentation/new_and_hot/screen_new_and_hot.dart';
 import 'package:netflix1/presentation/search/screen_search.dart';
 
+
 class ScreenMainPage extends StatelessWidget {
   ScreenMainPage({super.key});
 
   final _pages = [
-    ScreenHome(),
-    ScreenNewAndHot(),
-    ScreenFastLaugh(),
+    const ScreenHome(),
+    const ScreenNewAndHot(),
+    const ScreenFastLaugh(),
     ScreenSearch(),
     ScreenDownloads(),
   ];
@@ -28,7 +29,7 @@ class ScreenMainPage extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: BottomNavigationWidgets(),
+      bottomNavigationBar: const BottomNavigationWidgets(),
     );
   }
 }

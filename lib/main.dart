@@ -7,8 +7,9 @@ import 'package:netflix1/application/hot_and_new/hot_and_new_bloc.dart';
 import 'package:netflix1/application/search/search_bloc.dart';
 import 'package:netflix1/core/colors/colors.dart';
 import 'package:netflix1/domain/core/di/injectable.dart';
-import 'package:netflix1/presentation/main_page/screen_main_page.dart';
+//import 'package:netflix1/presentation/main_page/screen_main_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix1/presentation/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home: ScreenMainPage(),
+        home: const VideoSplashScreen()
+        // ScreenMainPage(),
       ),
     );
   }
